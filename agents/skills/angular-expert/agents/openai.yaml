@@ -1,0 +1,4 @@
+interface:
+  display_name: "Angular Expert"
+  short_description: "Expert Angular 21 guidance for this project."
+  default_prompt: "Use Angular Expert for Angular 21 standalone components, Signals, RxJS, CDK DragDrop, svg-pan-zoom integrations, production TypeScript, and project verification."
