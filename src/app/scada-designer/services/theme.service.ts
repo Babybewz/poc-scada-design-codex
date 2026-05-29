@@ -7,7 +7,7 @@ export type DesignerTheme = 'dark' | 'light';
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
-  readonly theme = signal<DesignerTheme>('dark');
+  readonly theme = signal<DesignerTheme>('light');
   readonly isDark = computed(() => this.theme() === 'dark');
 
   setTheme(theme: DesignerTheme): void {
