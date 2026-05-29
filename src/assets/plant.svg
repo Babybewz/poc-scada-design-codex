@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="plantTitle plantDesc">
+  <title id="plantTitle">Gas pipeline SCADA HMI</title>
+  <desc id="plantDesc">Designer-authored fixed-coordinate gas pipeline monitoring screen with valves, compressors, flow, pressure, CO2 and H2O indicators.</desc>
+
+  <defs>
+    <marker id="FLOW_ARROW" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#ffd21a"/>
+    </marker>
+    <filter id="greenGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#000000"/>
+  <g id="GRID" opacity="0.16" stroke="#1a1a1a" stroke-width="1">
+    <path d="M0 80H1600M0 160H1600M0 240H1600M0 320H1600M0 400H1600M0 480H1600M0 560H1600M0 640H1600M0 720H1600M0 800H1600"/>
+    <path d="M80 0V900M160 0V900M240 0V900M320 0V900M400 0V900M480 0V900M560 0V900M640 0V900M720 0V900M800 0V900M880 0V900M960 0V900M1040 0V900M1120 0V900M1200 0V900M1280 0V900M1360 0V900M1440 0V900M1520 0V900"/>
+  </g>
+
+  <g id="HEADER">
+    <rect x="28" y="22" width="1544" height="58" fill="#050505" stroke="#3b3b3b"/>
+    <text x="52" y="58" fill="#ffffff" font-family="Consolas, Arial, sans-serif" font-size="28" font-weight="700">NG PIPELINE STATION A - SCADA MONITORING</text>
+    <rect id="ALARM_BANNER_BOX" x="1080" y="32" width="454" height="36" fill="#041407" stroke="#00ff66" stroke-width="2"/>
+    <text id="ALARM_BANNER" x="1307" y="56" fill="#00ff66" text-anchor="middle" font-family="Consolas, Arial, sans-serif" font-size="19" font-weight="700">SYSTEM NORMAL</text>
+  </g>
+
+  <g id="STATION_LABELS" fill="#ffffff" font-family="Consolas, Arial, sans-serif">
+    <text x="78" y="184" font-size="18" font-weight="700">RECEIVING HEADER</text>
+    <text x="638" y="184" font-size="18" font-weight="700">COMPRESSION</text>
+    <text x="1160" y="184" font-size="18" font-weight="700">EXPORT HEADER</text>
+    <text x="148" y="650" font-size="16">BV-101</text>
+    <text x="732" y="650" font-size="16">BV-201</text>
+    <text x="1102" y="650" font-size="16">BV-301</text>
+  </g>
+
+  <g id="PIPELINES" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path id="PIPE_MAIN_BASE" d="M90 430H455 C505 430 508 360 560 360 H968 C1018 360 1022 430 1072 430 H1510" stroke="#806900" stroke-width="26"/>
+    <path d="M90 430H455 C505 430 508 360 560 360 H968 C1018 360 1022 430 1072 430 H1510" stroke="#ffd21a" stroke-width="14" marker-end="url(#FLOW_ARROW)"/>
+    <path id="PIPE_MAIN_FLOW" class="scada-flow-line" d="M90 430H455 C505 430 508 360 560 360 H968 C1018 360 1022 430 1072 430 H1510" stroke="#ffd21a" stroke-width="5" stroke-dasharray="18 18" marker-mid="url(#FLOW_ARROW)"/>
+
+    <path id="PIPE_BRANCH_BASE" d="M822 360V548H1186V430" stroke="#806900" stroke-width="24"/>
+    <path d="M822 360V548H1186V430" stroke="#ffd21a" stroke-width="12" marker-end="url(#FLOW_ARROW)"/>
+    <path id="PIPE_BRANCH_FLOW" class="scada-flow-line" d="M822 360V548H1186V430" stroke="#ffd21a" stroke-width="5" stroke-dasharray="18 18" marker-mid="url(#FLOW_ARROW)"/>
+  </g>
+
+  <g id="INLET_SEPARATOR" stroke="#bdbdbd" stroke-width="3">
+    <rect x="90" y="260" width="170" height="118" rx="6" fill="#111111"/>
+    <line x1="105" y1="296" x2="245" y2="296"/>
+    <line x1="105" y1="334" x2="245" y2="334"/>
+    <text x="175" y="244" text-anchor="middle" fill="#ffffff" font-family="Consolas, Arial, sans-serif" font-size="17" font-weight="700" stroke="none">INLET SEP</text>
+    <text x="175" y="326" text-anchor="middle" fill="#00ff66" font-family="Consolas, Arial, sans-serif" font-size="28" font-weight="700" stroke="none">V-101</text>
+  </g>
+
+  <g id="COMPRESSOR_001_GROUP" stroke="#bdbdbd" stroke-width="4">
+    <circle id="COMPRESSOR_001" cx="662" cy="360" r="70" fill="#111111"/>
+    <path d="M626 318 L710 360 L626 402 Z" fill="#00ff66" stroke="#00ff66" filter="url(#greenGlow)"/>
+    <text x="662" y="460" text-anchor="middle" fill="#ffffff" font-family="Consolas, Arial, sans-serif" font-size="18" font-weight="700" stroke="none">K-101 COMPRESSOR</text>
+  </g>
+
+  <g id="COMPRESSOR_002_GROUP" stroke="#bdbdbd" stroke-width="4">
+    <circle id="COMPRESSOR_002" cx="902" cy="360" r="70" fill="#111111"/>
+    <path d="M866 318 L950 360 L866 402 Z" fill="#00ff66" stroke="#00ff66" filter="url(#greenGlow)"/>
+    <text x="902" y="460" text-anchor="middle" fill="#ffffff" font-family="Consolas, Arial, sans-serif" font-size="18" font-weight="700" stroke="none">K-102 COMPRESSOR</text>
+  </g>
+
+  <g id="VALVE_BV1_GROUP" stroke-width="4">
+    <polygon id="VALVE_BV1" points="356,390 432,430 356,470 432,470 356,430 432,390" fill="#00ff66" stroke="#b9ffd3"/>
+    <rect id="VALVE_BV1_STATE_BOX" x="345" y="492" width="98" height="34" fill="#063b1b" stroke="#00ff66" stroke-width="2"/>
+    <text id="VALVE_BV1_STATE" x="394" y="516" text-anchor="middle" fill="#00ff66" font-family="Consolas, Arial, sans-serif" font-size="19" font-weight="700">OPEN</text>
+  </g>
+
+  <g id="VALVE_BV2_GROUP" stroke-width="4">
+    <polygon id="VALVE_BV2" points="712,320 788,360 712,400 788,400 712,360 788,320" fill="#00ff66" stroke="#b9ffd3"/>
+    <rect id="VALVE_BV2_STATE_BOX" x="701" y="492" width="98" height="34" fill="#063b1b" stroke="#00ff66" stroke-width="2"/>
+    <text id="VALVE_BV2_STATE" x="750" y="516" text-anchor="middle" fill="#00ff66" font-family="Consolas, Arial, sans-serif" font-size="19" font-weight="700">OPEN</text>
+  </g>
+
+  <g id="VALVE_BV3_GROUP" stroke-width="4">
+    <polygon id="VALVE_BV3" points="1070,390 1146,430 1070,470 1146,470 1070,430 1146,390" fill="#00ff66" stroke="#b9ffd3"/>
+    <rect id="VALVE_BV3_STATE_BOX" x="1059" y="492" width="98" height="34" fill="#063b1b" stroke="#00ff66" stroke-width="2"/>
+    <text id="VALVE_BV3_STATE" x="1108" y="516" text-anchor="middle" fill="#00ff66" font-family="Consolas, Arial, sans-serif" font-size="19" font-weight="700">OPEN</text>
+  </g>
+
+  <g id="INDICATORS" font-family="Consolas, Arial, sans-serif">
+    <g id="PRESSURE_PANEL_001">
+      <rect id="PRESSURE_BOX_001" x="102" y="690" width="238" height="86" fill="#06120a" stroke="#00ff66" stroke-width="3"/>
+      <text x="122" y="720" fill="#ffffff" font-size="17" font-weight="700">PT-101 PRESSURE</text>
+      <text id="PRESSURE_001" x="122" y="758" fill="#00ff66" font-size="30" font-weight="700">68 BAR</text>
+    </g>
+
+    <g id="PRESSURE_PANEL_002">
+      <rect id="PRESSURE_BOX_002" x="380" y="690" width="238" height="86" fill="#06120a" stroke="#00ff66" stroke-width="3"/>
+      <text x="400" y="720" fill="#ffffff" font-size="17" font-weight="700">PT-201 PRESSURE</text>
+      <text id="PRESSURE_002" x="400" y="758" fill="#00ff66" font-size="30" font-weight="700">57 BAR</text>
+    </g>
+
+    <g id="FLOW_PANEL_001">
+      <rect id="FLOW_BOX_001" x="658" y="690" width="258" height="86" fill="#06120a" stroke="#00ff66" stroke-width="3"/>
+      <text x="678" y="720" fill="#ffffff" font-size="17" font-weight="700">FT-101 MAIN FLOW</text>
+      <text id="FLOW_001" x="678" y="758" fill="#00ff66" font-size="30" font-weight="700">980 MMSCFD</text>
+    </g>
+
+    <g id="FLOW_PANEL_002">
+      <rect id="FLOW_BOX_002" x="956" y="690" width="258" height="86" fill="#06120a" stroke="#00ff66" stroke-width="3"/>
+      <text x="976" y="720" fill="#ffffff" font-size="17" font-weight="700">FT-201 BRANCH FLOW</text>
+      <text id="FLOW_002" x="976" y="758" fill="#00ff66" font-size="30" font-weight="700">720 MMSCFD</text>
+    </g>
+
+    <g id="ANALYZER_PANEL">
+      <rect x="1254" y="690" width="258" height="86" fill="#06120a" stroke="#00ff66" stroke-width="3"/>
+      <text x="1274" y="720" fill="#ffffff" font-size="17" font-weight="700">GAS ANALYZER</text>
+      <text x="1274" y="750" fill="#ffffff" font-size="18">CO2</text>
+      <text id="CO2_001" x="1340" y="750" fill="#00ff66" font-size="24" font-weight="700">1.20 %</text>
+      <text x="1274" y="776" fill="#ffffff" font-size="18">H2O</text>
+      <text id="H2O_001" x="1340" y="776" fill="#00ff66" font-size="24" font-weight="700">21.0 LB</text>
+    </g>
+  </g>
+
+  <g id="PIPELINE_LABELS" fill="#ffffff" font-family="Consolas, Arial, sans-serif" font-size="15">
+    <text x="96" y="414">INLET GAS</text>
+    <text x="1266" y="414">EXPORT GAS</text>
+    <text x="845" y="586">RECYCLE / BYPASS LINE</text>
+  </g>
+</svg>

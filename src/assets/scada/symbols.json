@@ -1,0 +1,22 @@
+[
+  {
+    "group": "general",
+    "order": 0,
+    "symbols": [
+      { "id": "GENERAL_VALVE", "name": "Valve", "file": "valve.svg", "type": "valve" },
+      { "id": "GENERAL_PRESSURE", "name": "Pressure Indicator", "file": "pressure-indicator.svg", "type": "pressure-indicator" },
+      { "id": "GENERAL_FLOW", "name": "Flow Indicator", "file": "flow-indicator.svg", "type": "flow-indicator" },
+      { "id": "GENERAL_TEXT_BOX", "name": "Text Box", "file": "text-box.svg", "type": "text-label" }
+    ]
+  },
+  {
+    "group": "basic",
+    "order": 10,
+    "symbols": [
+      { "id": "BASIC_PUMP", "name": "Pump", "file": "pump.svg", "type": "pump" },
+      { "id": "BASIC_COMPRESSOR", "name": "Compressor", "file": "compressor.svg", "type": "compressor" },
+      { "id": "BASIC_TANK", "name": "Tank", "file": "tank.svg", "type": "tank" },
+      { "id": "BASIC_SENSOR", "name": "Sensor", "file": "sensor.svg", "type": "sensor" }
+    ]
+  }
+]

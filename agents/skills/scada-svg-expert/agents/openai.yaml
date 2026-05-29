@@ -1,0 +1,4 @@
+interface:
+  display_name: "SCADA SVG Expert"
+  short_description: "Build Angular SCADA viewers from designer-owned SVG assets."
+  default_prompt: "Use SCADA SVG Expert for Angular SCADA viewer work where SVG is the source of truth and Angular handles data binding, interaction, realtime updates, and alarm visualization."
